@@ -1,0 +1,559 @@
+// variables
+$rojo: #F40202;
+$rosa: #F4CBD3;
+$gris: #fafafa;
+$blanco: #FFFFFF;
+$primaria: 'Montserrat', sans-serif;
+$secundaria: 'Futura', "Trebuchet MS", Arial, sans-serif;
+$enable-gradients: rgb(255,255,255);
+
+// MIXIN
+@mixin shadows {
+    -webkit-box-shadow: -1px 5px 5px 0px rgba(50, 50, 50, 0.14);
+    -moz-box-shadow: -1px 5px 5px 0px rgba(50, 50, 50, 0.14);
+    box-shadow: -1px 5px 5px 0px rgba(50, 50, 50, 0.14);
+}
+
+section.banner {
+	font-size: 12px;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(244,203,211,1) 100%);
+    font-family: $primaria;
+	text-align: center;
+	margin-top: 5px;
+	padding-top: 5px;
+    justify-content: center;
+}
+
+section.banner p.ship, img.fire {
+	animation-duration: 5s;
+	animation-name: aparecer;
+}
+
+section.banner img.fire {
+	display: inline-block;
+	height: 18px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin: -8px 10px 0 10px;
+}
+
+/*logo*/
+.logocontainer {
+	width: 100%;
+	display: block;
+	display: grid;
+	justify-items: start;
+}
+
+.logo {
+	width: 100px;
+	padding: 20px;
+}	
+
+/*menú principal*/
+.navbar-collapse {
+	justify-content: right;
+}
+
+ul {
+    list-style: none;
+
+    &.dropdown {
+        display: none;
+    }
+    
+    li {
+        text-decoration: none;
+        display: inline-block;
+        position: relative;
+
+        &:hover ul.dropdown {
+            display: block;
+            width: auto;
+            height: auto;
+            position: absolute;
+            background-color: #FFFFFF;
+        }
+
+        a {
+            font-weight: regular;
+            font-size: 20px;
+            font-family: $primaria;
+            text-align: center;
+            margin-left: 10px;
+            text-decoration: none;
+            margin: 10px;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                text-decoration: underline;
+                background-color: $rosa;
+                color: $rojo;
+            }
+        }
+
+        ul li a {
+            font-weight: normal;
+        }
+    }
+}
+
+.dropdown-menu {
+	border: none;
+    @include shadows;
+
+    a {
+        margin: 0;
+        
+        &:hover {
+            background-color:$rosa;
+        }
+    }
+}
+
+.navbar-toggler {
+	border-color: $rojo;
+}
+
+.navbar-toggler-icon {
+	color: $rojo;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(0,0,0,.9);
+}
+
+/*menú secundario con íconos*/
+.secondary {
+	height: 65px;
+	display: grid;
+	grid-template-areas: "search wish login";
+	grid-template-rows: 10px 10px;
+	grid-template-columns: auto;
+	grid-gap: 10px;
+	display: flex;
+	flex-direction: row;
+    justify-content: flex-end;
+    padding-top: 20px;
+    /* margin-right: 20px; */
+    
+    a {
+        width: 30px;
+        height: 30px;
+        margin: 10px 20px;
+        text-decoration: none;
+        
+        img {
+            display: block;
+            height: 30px;
+            margin: 0 auto;
+        }
+    }
+}
+.form-control {
+    color: $rojo;
+    border-color: $rojo;
+    font-family: $primaria;
+    display: block;
+    margin: 0 auto;
+}
+
+.btn-outline-success {
+    color: $rojo;
+    border-color: $rojo;
+    /* margin-right: 20px;  */
+
+    &:hover {
+        background-color: $rojo;
+        border-color: $rojo;
+        color: $rosa;
+    }
+}
+
+/* sección principal de página con fotos*/
+h1 {
+    color: $rojo;
+    font-family: $primaria;
+	font-size: 60px;
+	font-weight: bold;
+	text-align: center;
+	font-weight: 800;
+}
+
+h5 {
+	font-size: 30px;
+	color: $rojo;
+}
+
+h3, h6 {
+    font-family: $primaria;
+    color: $rojo;
+    font-size: 30px;
+	font-weight: 600;
+	text-align: center;
+	margin: 0 auto;
+	padding: 15px;
+}
+
+h4, {
+    font-family: $secundaria;
+    color: $rosa;
+    font-size: 26px;
+    padding-top: 50px;
+    text-align: left;
+}
+section.newarrivals {
+	margin-top: 30px;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+
+    img {
+        width: 100%;
+    }
+}
+
+.buttonshop {
+    position: relative;
+    padding: 1em;
+    border: 0;
+    font-family: $primaria;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    background-color: $rojo;
+    color: $rosa;
+    transition: background-color .3s ease, color .3s ease;
+    -webkit-animation: rotate .75s 1;
+}
+
+.button.shop:hover {
+    background-color: #c0392b;
+    color: #fff;
+}
+
+@-webkit-keyframes rotate {
+	from {
+		-webkit-transform: rotate(0deg);
+	}
+
+	to {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+section {
+    .instagramposts {
+        background-color: $rosa;
+        font-family: $primaria;
+        color: $rojo;
+        font-family: $secundaria;
+        text-align: center;
+        font-size: 1,9rem;
+        padding: 10px;
+    }
+}
+
+.marquee {
+    position: relative;
+    overflow-y: hidden;
+    width: 100vw;
+    max-width: 100%;
+    height: 32px;
+    overflow-x: hidden;
+    background-color: $rosa;
+    color: $rojo;
+    font-size:20px;
+    font-family: $primaria;
+    align-content: center;
+}
+
+.track {
+    position: absolute;
+    white-space: nowrap;
+    will-change: transform;
+    animation: marquee 40s linear infinite;
+}
+
+.content {
+    overflow-x: hidden;
+}
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/*carrusel*/
+.carousel-inner {
+	height: 340px;
+}
+
+.carousel-item img {
+    @extend .carousel-inner;
+    object-fit: cover;
+}
+
+// CONDICIONAL
+.carousel-control-prev {
+    left: 0;
+    @if $enable-gradients {
+        background-image: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(235,224,237,1) 64%, rgba(243,203,211,1) 100%);
+    }
+}
+
+.carousel-control-next {
+    right: 0;
+    @if $enable-gradients {
+        background-image: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(235,224,237,1) 64%, rgba(243,203,211,1) 100%);
+    }
+}
+
+/*newsletter*/
+section .box {
+    background-color: $rosa;
+    font-family: $secundaria;
+	text-align: center;
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 100px;
+	margin-bottom: 0;
+	padding: 40px;
+	border-radius: 20px;
+    justify-content: center;
+
+    .form-group {
+        margin: 0 auto;
+        padding: 25px 0;
+        width: auto;
+        background-color: transparent;
+
+        .form-control {
+            display: inline-block;
+        }
+    }
+
+    .btn-secondary {
+        color: $rojo;
+        background-color: $rosa;
+        border-color: $rojo;
+        border-radius: 5px;
+    }
+    @media (min-width: 768px) {
+        width: 60%;
+        margin-top: 160px;
+        margin-bottom: 200px;
+    }
+}
+
+/*sección "contacto" */
+ul.contact {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+    flex-wrap: wrap;
+    
+    li {
+        padding: 4px 0px;
+    }
+}
+
+/*formulario de contacto*/
+.form-group {
+    background-color: $rosa;
+    font-family: $primaria;
+	width: 100%;
+	text-align: center;
+	width: 60%;
+	margin: 0 auto;
+	padding: 25px;
+	border-radius: 1px;
+}
+
+.box.contacto,
+.box.login {
+    margin: 0 auto;
+
+    .btn {
+        min-width: 140px;
+        margin: 5px;
+    }
+}
+
+ /* anti-style  */
+.inspo {
+	margin-top: 30px;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+
+    img {
+        width: 250px;
+        height: 270px;
+        margin: 1px;
+    }
+}
+
+
+/*whishlist*/
+.wish-icn {
+    color: $rojo;
+    width: 40px;
+    height: 40px;
+}
+
+.wishlist {
+    .card {
+        flex-direction: column;
+        /* background-color: $rosa; */
+        font-family: $primaria;
+        padding: 25px;
+        border-radius: 20px;
+
+        .img-wishlist {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .card-title {
+            max-width: 95%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        @media (min-width: 768px) {
+            flex-direction: row;
+
+            .img-wishlist {
+                width: 150px;
+            }
+        }
+    }
+}
+
+//  error 404
+.meme {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    width: 100%;
+    max-width: 400px;
+}
+
+//  footer  
+footer {
+	text-align: center;
+	margin-top: 120px;
+	padding: 40px;
+    background-color: $gris;
+
+    a {
+        color: $rojo;
+        font-family: $primaria;
+        font-weight: regular;
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+
+    // fotter con redes sociales (BEM)
+    .socialmedia {
+        margin-top: 30px;
+
+        a {
+            color: $rojo;
+            border-radius: 50%;
+
+            &:hover {
+                background-color: $gris !important;
+            }
+        }
+        
+        .socialmedia--insta {
+            background-color: rgba(131, 58,180, 0.05);
+        }
+    
+        .socialmedia--twi {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+    
+        .socialmedia--pinte {
+            background-color: rgba(240,0, 42, 0.05);
+        }
+    }
+}
+
+.btn-primary {
+    background-color: $rosa;
+    font-family: $secundaria;
+    text-align: center;
+    align-items: center;
+    border-radius: 20px;
+    justify-content: center;
+    color: $rojo;
+    border-color: $rojo;
+    
+    &:hover {
+        background-color: $rojo;
+        border-color: $rojo;
+        color: $rosa;
+    }
+}
+
+.error {
+    .links {
+        margin-top: 100px;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .logocontainer {
+    	margin: 0 auto;
+    	justify-items: center;
+    }
+
+    .secondary {
+    	justify-content: center;
+    }
+
+    section.newarrivals img {
+     width: 100%;
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width:1024px) {
+    section.newarrivals img {
+        width: 60%;
+    }
+    
+    .logocontainer {
+    	margin: 0 auto;
+    	justify-items: center;
+    }
+
+    .secondary {
+    	justify-content: center;
+    }
+
+.carousel-control-prev, .carousel-control-next {
+    background: $rosa;
+    }
+}
+
+@keyframes aparecer {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+    }
+}
